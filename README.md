@@ -66,10 +66,13 @@ sh mqadmin updatetopic -c {cluster} -t {topic} -n {namesrv}
 - Configure Gateway Node List
 ```shell
 sh mqadmin updateKvConfig -s LMQ -k LMQ_CONNECT_NODES -v {ip1,ip2} -n {namesrv}
+mqadmin updateKvConfig -s LMQ -k LMQ_CONNECT_NODES -v 127.0.0.1 -n 127.0.0.1:9876
 ```
 - Configure the first-level topic list
 ```shell
 sh mqadmin updateKvConfig -s LMQ -k ALL_FIRST_TOPICS -v {topic1,topic2} -n {namesrv}
+sh mqadmin updateKvConfig -s LMQ -k ALL_FIRST_TOPICS -v  -n {namesrv}
+
 ```
 - Configure a list of wildcard characters under each first-level topic
 ```shell
