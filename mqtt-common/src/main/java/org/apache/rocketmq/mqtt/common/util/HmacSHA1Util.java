@@ -40,4 +40,13 @@ public class HmacSHA1Util {
         String sign = macSignature(text, secretKey);
         return sign.equals(new String(input, charset));
     }
+
+    public static void main(String[] args) throws NoSuchAlgorithmException, InvalidKeyException {
+        String sign = HmacSHA1Util.macSignature("receive_mqtt_02", "123456");
+        //send_websocket_01:rlafyKv8WaGJVJ/cBSeLMpyn0QY=
+        //receive_websocket_01:RR/uWckScMlB3PQmI5ZZQNCqq3g=
+        //receive_mqtt_01:sRXZDgFLCYrclwCegpLtDlv+hlY=
+        //receive_mqtt_02:33/WJhQKdixduEw/F0EyY5CdtMw=
+        System.out.println(sign);
+    }
 }

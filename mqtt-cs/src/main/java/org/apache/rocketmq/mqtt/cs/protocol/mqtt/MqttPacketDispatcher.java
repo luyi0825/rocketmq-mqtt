@@ -188,6 +188,7 @@ public class MqttPacketDispatcher extends SimpleChannelInboundHandler<MqttMessag
             case SUBSCRIBE:
                 return mqttSubscribeHandler.preHandler(ctx, (MqttSubscribeMessage) msg);
             case PUBACK:
+                //发布ack
                 return mqttPubAckHandler.preHandler(ctx, (MqttPubAckMessage) msg);
             case PINGREQ:
                 return mqttPingHandler.preHandler(ctx, msg);

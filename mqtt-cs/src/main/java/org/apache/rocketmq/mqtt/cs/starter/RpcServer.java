@@ -34,6 +34,9 @@ import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * 调用其他接口的服务
+ */
 @Service
 public class RpcServer {
     private static Logger logger = LoggerFactory.getLogger(RpcServer.class);
